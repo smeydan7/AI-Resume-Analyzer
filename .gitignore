@@ -1,0 +1,21 @@
+# ── Python virtual environment ─────────────────────────────────────────
+backend/venv/
+backend/__pycache__/
+backend/*.py[cod]
+backend/*.sqlite3
+backend/*.egg-info/
+
+# dotenv files (API keys, etc.)
+backend/.env
+
+# ── Node / Vite build artifacts ────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.vite/
+
+# ── VSCode / macOS cruft ───────────────────────────────────────────────
+.vscode/
+.DS_Store
+Thumbs.db
+
