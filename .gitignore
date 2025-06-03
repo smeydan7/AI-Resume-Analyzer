@@ -4,6 +4,7 @@ backend/__pycache__/
 backend/*.py[cod]
 backend/*.sqlite3
 backend/*.egg-info/
+backend/.env
 
 # dotenv files (API keys, etc.)
 backend/.env
@@ -18,5 +19,3 @@ frontend/.vite/
 .vscode/
 .DS_Store
 Thumbs.db
-
-.env
