@@ -6,7 +6,7 @@ backend/*.sqlite3
 backend/*.egg-info/
 
 # dotenv files (API keys, etc.)
-#backend/.env
+backend/.env
 
 # ── Node / Vite build artifacts ────────────────────────────────────────
 frontend/node_modules/
