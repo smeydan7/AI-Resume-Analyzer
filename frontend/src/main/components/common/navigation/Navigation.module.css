@@ -1,0 +1,55 @@
+.navigation {
+    @apply bg-white shadow-sm border-b border-gray-200;
+}
+
+.container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply flex justify-between items-center h-16;
+}
+
+.logo {
+    @apply flex items-center;
+}
+
+.logoText {
+    @apply text-xl font-bold text-gray-900 ml-3;
+}
+
+.navItems {
+    @apply flex space-x-8;
+}
+
+.navItem {
+    @apply flex items-center px-3 py-2 rounded-md text-sm font-medium;
+    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-50;
+    @apply transition-colors duration-200;
+    @apply no-underline;
+}
+
+.navItem svg {
+    @apply mr-2;
+}
+
+.active {
+    @apply text-blue-600 bg-blue-50;
+    @apply font-semibold;
+}
+
+.active:hover {
+    @apply text-blue-700 bg-blue-100;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .navItems {
+        @apply space-x-4;
+    }
+
+    .navItem {
+        @apply px-2 py-1 text-xs;
+    }
+
+    .logoText {
+        @apply text-lg;
+    }
+}
