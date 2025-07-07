@@ -1,55 +1,43 @@
-.navigation {
-    @apply bg-white shadow-sm border-b border-gray-200;
+/* Bar at the top */
+.nav {
+    @apply w-full border-b border-slate-200 bg-white;
 }
 
-.container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-    @apply flex justify-between items-center h-16;
+/* Center content & limit width */
+.inner {
+    @apply mx-auto flex max-w-7xl items-center justify-between px-4 py-3;
 }
 
-.logo {
-    @apply flex items-center;
+/* Brand (icon + text) */
+.brand {
+    @apply flex items-center gap-2 font-semibold text-slate-900;
 }
 
-.logoText {
-    @apply text-xl font-bold text-gray-900 ml-3;
+.brandIcon {
+    @apply h-6 w-6 text-blue-600;
 }
 
-.navItems {
-    @apply flex space-x-8;
+.brandText {
+    @apply text-lg tracking-wide;
 }
 
-.navItem {
-    @apply flex items-center px-3 py-2 rounded-md text-sm font-medium;
-    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-50;
-    @apply transition-colors duration-200;
-    @apply no-underline;
+/* Nav links container */
+.links {
+    @apply flex items-center gap-2 sm:gap-4;
 }
 
-.navItem svg {
-    @apply mr-2;
+/* Base link style */
+.link {
+    @apply flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium
+    text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900;
 }
 
+/* Active link */
 .active {
-    @apply text-blue-600 bg-blue-50;
-    @apply font-semibold;
+    @apply bg-blue-50 text-blue-600;
 }
 
-.active:hover {
-    @apply text-blue-700 bg-blue-100;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .navItems {
-        @apply space-x-4;
-    }
-
-    .navItem {
-        @apply px-2 py-1 text-xs;
-    }
-
-    .logoText {
-        @apply text-lg;
-    }
+/* Icon inside link */
+.linkIcon {
+    @apply h-4 w-4;
 }
