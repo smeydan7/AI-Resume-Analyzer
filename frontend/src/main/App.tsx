@@ -1,11 +1,10 @@
 import { Navigation } from "./components/common/navigation";
 import { UploadResume } from "./components/upload";
+import { Dashboard } from "./components/dashboard";
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Create some basic page components
-const Dashboard = () => <div>Dashboard Page</div>;
-const Upload = () => <div>Upload Resume Page</div>;
 const Analysis = () => <div>Analysis Page</div>;
 const Settings = () => <div>Settings Page</div>;
 
