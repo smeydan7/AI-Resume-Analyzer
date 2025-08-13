@@ -1,0 +1,63 @@
+.wrapper {
+    @apply mx-auto max-w-7xl px-4 py-6;
+}
+
+.headerRow {
+    @apply mb-6 flex items-center justify-between;
+}
+
+.title {
+    @apply text-2xl font-bold text-slate-900;
+}
+
+.kpiGrid {
+    @apply mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3;
+}
+
+.kpiCard {
+    @apply rounded-md border border-slate-200 bg-white p-4;
+}
+
+.kpiLabel {
+    @apply text-sm text-slate-500;
+}
+
+.kpiValue {
+    @apply text-2xl font-semibold text-slate-900;
+}
+
+.list {
+    @apply grid grid-cols-1 gap-4;
+}
+
+.item {
+    @apply flex flex-col justify-between gap-4 rounded-md border border-slate-200 bg-white p-4 sm:flex-row sm:items-center;
+}
+
+.itemHeader {
+    @apply flex flex-col;
+}
+
+.itemTitle {
+    @apply text-base font-medium text-slate-900;
+}
+
+.itemMeta {
+    @apply text-sm text-slate-500;
+}
+
+.badges {
+    @apply flex flex-wrap items-center gap-2;
+}
+
+.badge {
+    @apply rounded-md bg-slate-100 px-2 py-1 text-xs text-slate-700;
+}
+
+.score {
+    @apply rounded-md bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-700;
+}
+
+.actions {
+    @apply flex items-center gap-2;
+}
