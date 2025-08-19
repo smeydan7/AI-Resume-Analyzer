@@ -1,11 +1,11 @@
-import { Navigation } from "./components/common/navigation";
+ import { Navigation } from "./components/common/navigation";
 import { UploadResume } from "./components/upload";
 import { Dashboard } from "./components/dashboard";
+import { Analysis } from "./components/analysis";
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Create some basic page components
-const Analysis = () => <div>Analysis Page</div>;
 const Settings = () => <div>Settings Page</div>;
 
 function App() {
