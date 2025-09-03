@@ -12,7 +12,7 @@ A web app that parses your resume (PDF or text), extracts key details (education
 - **Export & Share**: Download your enhanced resume or share directly with recruiters.
 
 ## 🛠️ Tech Stack
-- **Backend**: Springboot Java, pdfplumber, Pydantic Settings, OpenAI API
+- **Backend**: Springboot Java, pdfplumber, OpenAI API
 - **Frontend**: React, TypeScript, Tailwind CSS, Vite
 - **Data**: PostgreSQL
 - **Dev & Deployment**: Docker, CORS middleware, dotenv for config
