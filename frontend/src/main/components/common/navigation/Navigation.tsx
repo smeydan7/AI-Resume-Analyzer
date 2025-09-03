@@ -19,7 +19,7 @@ const items: Item[] = [
     { path: '/',         label: 'Dashboard',     icon: Home },
     { path: '/upload',   label: 'Upload Resume', icon: Upload },
     { path: '/analysis', label: 'Analysis',      icon: BarChart3 },
-    // { path: '/settings', label: 'Settings',      icon: Settings },
+    { path: '/settings', label: 'Settings',      icon: Settings },
 ];
 
 export const Navigation = () => (
