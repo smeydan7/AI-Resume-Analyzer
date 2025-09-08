@@ -1,13 +1,32 @@
 import { useState } from 'react';
 import { Dropfolder } from './dropfolder';
+import { ApiService } from '../../services/api';
+import type { ResumeUploadResponse } from '../../services/api';
+import type { AnalysisResult } from '../../models/AnalysisResult';
 import styles from './Upload.module.css';
 
 export const UploadResume = () => {
     const [fileName, setFileName] = useState<string | null>(null);
+    const [isUploading, setIsUploading] = useState(false);
+    const [uploadError, setUploadError] = useState<string | null>(null);
+    const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
+    const [jobDescription, setJobDescription] = useState('');
 
-    const handleFile = (file: File) => {
+    const handleFile = async (file: File) => {
         setFileName(file.name);
-        // TODO: POST file to /api/resumes here
+        setUploadError(null);
+        setIsUploading(true);
+        
+        try {
+            const response: ResumeUploadResponse = await ApiService.uploadResume(file, jobDescription);
+            setAnalysisResult(response.analysisResult);
+            console.log('Resume uploaded successfully:', response);
+        } catch (error) {
+            setUploadError(error instanceof Error ? error.message : 'Upload failed');
+            console.error('Upload error:', error);
+        } finally {
+            setIsUploading(false);
+        }
     };
 
     return (
@@ -16,6 +35,27 @@ export const UploadResume = () => {
 
             <Dropfolder onFileSelect={handleFile} />
             {fileName && <p className={styles.fileName}>Selected: {fileName}</p>}
+            
+            {isUploading && (
+                <div className={styles.uploadStatus}>
+                    <p>Uploading and analyzing your resume...</p>
+                </div>
+            )}
+            
+            {uploadError && (
+                <div className={styles.errorMessage}>
+                    <p>Error: {uploadError}</p>
+                </div>
+            )}
+            
+            {analysisResult && (
+                <div className={styles.successMessage}>
+                    <h3>Analysis Complete!</h3>
+                    <p>Overall Score: {analysisResult.overallScore}/100</p>
+                    <p>ATS Compatibility: {analysisResult.atsCompatibility}%</p>
+                    <p>Recommendations: {analysisResult.recommendations.length}</p>
+                </div>
+            )}
 
             <div className={styles.infoCard}>
                 <h2 className={styles.infoTitle}>What happens next?</h2>
@@ -34,6 +74,8 @@ export const UploadResume = () => {
                 rows={4}
                 placeholder="Paste the job description here to get targeted keyword recommendations…"
                 className={styles.textArea}
+                value={jobDescription}
+                onChange={(e) => setJobDescription(e.target.value)}
             />
 
             <div className={styles.proTips}>

@@ -1,4 +1,4 @@
- import { Navigation } from "./components/common/navigation";
+import { Navigation } from "./components/common/navigation";
 import { UploadResume } from "./components/upload";
 import { Dashboard } from "./components/dashboard";
 import { Analysis } from "./components/analysis";
