@@ -1,5 +1,5 @@
-import { AnalysisResult } from '../models/AnalysisResult';
-import { Resume } from '../models/Resume';
+import type { AnalysisResult } from '../models/AnalysisResult';
+import type { Resume } from '../models/Resume';
 
 const API_BASE_URL = 'http://localhost:8080/api';
 
